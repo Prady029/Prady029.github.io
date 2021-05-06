@@ -546,52 +546,51 @@ body {
   background: var(--text-color);
 }
 :root {
-  --bg-color: #282a36;
-  --text-color: #f8f8f2;
+  --bg-color: rgb(10, 10, 10);
+  --text-color: #fff;
   --blog-gray-color: rgb(180, 180, 180);
   --background-image: linear-gradient(
       90deg,
-      #282a364d,
-      #282a36
+      rgba(10, 10, 10, 0.3),
+      rgb(10, 10, 10, 1)
     ),
-    url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80");
+    url("https://images.unsplash.com/photo-1520583457224-aee11bad5112?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=altumcode-P2SkP_PXhlU-unsplash.jpg");
   --background-background: linear-gradient(
       0deg,
-      #282a36,
-      #282a3699
+      rgba(10, 10, 10, 1),
+      rgba(10, 10, 10, 0.6)
     ),
-    url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") center center fixed;
+    url("https://images.unsplash.com/photo-1520583457224-aee11bad5112?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=altumcode-P2SkP_PXhlU-unsplash.jpg") center center fixed;
   --height: 50vh;
 }
 
 #display h1 {
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: #f8f8f2;
+  -webkit-text-fill-color: #fff;
 }
 
 #blog-display h1 {
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: #f8f8f2;
+  -webkit-text-fill-color: #fff;
 }
 
 .projects section {
-  background: #44475a;
+  background: rgb(20, 20, 20);
 }
 
 #blog_section section {
-  background: #44475a;
+  background: rgb(20, 20, 20);
 }
 
 @media (max-width: 800px) {
   :root {
     --background-image: linear-gradient(
         0deg,
-        rgb(40, 42, 54),
-        rgba(40, 42, 54, 0)
+        rgba(10, 10, 10, 1),
+        rgba(10, 10, 10, 0)
       ),
-      url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") !important;
+      url("https://images.unsplash.com/photo-1520583457224-aee11bad5112?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=altumcode-P2SkP_PXhlU-unsplash.jpg") !important;
   }
 }
-
