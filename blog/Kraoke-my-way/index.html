@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kraoke my way..</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Kraoke my way..</h1>
+      <h2 id="blog_sub_title">Extracting Vocals And Instrumentals From Music The Deep Learning Way</h2>
+      <div id="blog"><p id="para_0_original">Whenever people get exposed to good music, the tune gets stuck in their heads for hours. And at some point, they google up the lyrics, vocals, and instrumental. And the search results always point to verses uploaded by any kind-hearted people, vocals performed by individuals, and instrumentals, again performed by any person or group of people. In each case, human intervention is prevalent for optimal results. What if there is another way of getting these things?</p><p id="para_1_original">LALAL.AI flaunts the deep-learning way; it uses state-of-the-art deep-learning models to get you the vocals and instrumentals from any music file without quality loss. It had already beaten popular vice isolation services like Spleeter by Deezer and PhonicMind regarding accessibility and quality. Neither the users have to install any program nor dive into the terminals’ darkness to get their desired materials. They simply have to drag-and-drop the music file onto their website and get their needed vocals and instrumentals.</p><p id="para_2_original">Moreover, the LALAL.AI service always outputs files in the same format as the uploaded file, contrary to other services that only split out 44.1kHz/16bit WAV files. Users, henceforth avoid third-party services for conversion to the original format and upsampling the bitrates that further introduces noise. In a blog post, the company had put up a quantitative comparison against its competitions.</p><p id="para_3_original">The AI company claims that it had trained extraction models with a humongous 20TB of training data. Their music dataset consists of studio-quality multi-track recordings, the same material sound engineers use. The deep-learning models behind the service have a hopping 45 million parameters. </p><p id="para_4_original">The LALAL.AI service can currently deconstruct remixed songs into original songs, along with their vocal and instrumental tracks. The deep learning algorithms isolate each stem precisely and hence, achieve speeds-up in track splitting. The free service offers three instances for now and for heavy users; other options are available too. They also provide an API for scalable solutions.</p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme === "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

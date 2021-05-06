@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dont gift me dictionaries now..</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Dont gift me dictionaries now..</h1>
+      <h2 id="blog_sub_title">Microsoft Speller100: A Spell-Checker For Over 100 Languages</h2>
+      <div id="blog"><p id="para_0_original">People do not care enough to use their queries’ correct spelling while searching for anything online. This recklessness makes the search engine match the incorrect set of documents and trigger wrong search results. It is of utmost importance that correctly spelled queries are submitted. Most people do not spell check because they assume that the search engines will figure out what they want to find. Thankfully, the search engines do get that right; you will find something like – – “Did you mean ‘__’?” just below their search bars. These corrections at their core are based on English. However, on a global scale, the multilingualism of the population creates new technological challenges. The linguistic diversity of the queries have quickly gone beyond mere 100 languages.</p><p id="para_1_original">Microsoft’s search engine, Bing, which had been serving corrections in more than 24 languages, obviously had more room for improvements. Enters Speller100, the large-scale multilingual spelling correction models for more than 100 languages. It is an improvement over the traditional statistical models based on the Noisy-channel coding theorem, and user feedback on auto-correction works well for resource-heavy languages.</p><p id="para_2_original">The researchers noted, “For a language with very little web presence and user feedback, it’s challenging to gather an adequate amount of training data. To create spelling correction solutions for these latter types of languages, models cannot rely solely on training data to learn the spelling of a language.” Fundamentally, spelling correction is different from predicting the next words or sentences. So, the Speller100 needs to model both the language and the spelling errors. The spelling errors, inherently, are character level mutations. These errors have two different types – Non-word error, words out of the language vocabulary, and Word errors where the word is valid but does not fit into the context.</p><p id="para_3_original">The error correction process was formulated as a denoising problem that converts corrupted texts to their original form. They considered the sequence-to-sequence nature of spelling and the errors as noises. All they needed was a denoising sequence-to-sequence deep learning model. Thankfully, Facebook AI already had the groundwork done with their BART paper. The Microsoft researchers leveraged the BART model that uses word-level denoising s2s autoencoder pretraining. But instead of word-level, character-level corruptions were added to terms, and an error-correcting model was trained, which shall get us back to the original word. The researchers swiftly avoided the collection of misspelled queries in 100+ languages.</p><p id="para_4_original">The researchers had to take care of light-resource languages, where training data was not available. A zero-shot training paradigm was used, which is effective in data-scarce situations like this and does not require any additional language-specific labeled training data. They exploited the linguistic similarities of the light-resource languages with any major language family to pre-training the zero-shot models. They used resources from any related resource-heavy language. A small example has been provided below. </p><p id="para_5_original">Microsoft claims that during the online A/B testing of the spell-checker on Bing, no-result pages reduced by 30%, user-based manual intervention for query reform went below by 5%, spellings suggestions improved by 67%, and the click-through rate of the first page went up by a staggering 70%. The company seems to ramp-up the integration of Speller100 into its other services.</p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme === "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
