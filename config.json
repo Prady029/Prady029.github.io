@@ -1,18 +1,22 @@
 [
  {
-  "username": "ruchi-9",
-  "name": "Ruchi Choudhary",
-  "userimg": "https://avatars.githubusercontent.com/u/42173689?v=4",
+  "username": "Prady029",
+  "name": "Pradyumna Kumar Sahoo",
+  "userimg": "https://avatars.githubusercontent.com/u/40775401?v=4",
   "sort": "star",
   "order": "desc",
-  "limit": "20",
+  "limit": "25",
   "includeFork": true,
-  "theme": "dark.css",
+  "theme": "dracula.css",
   "types": [
-   "all"
+   "owner"
   ],
-  "linkedin": "Ruchi95",
-  "telegram": "Misschaudhary",
-  "email": "rruchi0684@gmail.com"
+  "twitter": "prady029",
+  "linkedin": "prady029",
+  "medium": "prady029",
+  "telegram": "prady029",
+  "email": "pradyumnasahoo029@gmail.com",
+  "dribbble": null,
+  "resume": "https://drive.google.com/file/d/1qBkxtyQTbS38w21APuZeWyjm03VUOro0/view"
  }
 ]
